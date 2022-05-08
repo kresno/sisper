@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Lokasi extends CI_Controller {
+class Pegawai extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,9 +20,9 @@ class Lokasi extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('lokasi_m');
-        $data['row'] = $this->lokasi_m->get();
+		$this->load->model('pegawai_m');
+        $data['row'] = $this->pegawai_m->get();
 
-		$this->template->load('template', 'lokasi/index', $data);
+		$this->template->load('template', 'pegawai/index', $data);
 	}
 }
