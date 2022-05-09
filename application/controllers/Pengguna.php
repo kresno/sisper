@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pegawai extends CI_Controller {
+class Pengguna extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,10 +20,10 @@ class Pegawai extends CI_Controller {
 	 */
 	public function index()
 	{
-		check_not_login();
-		$this->load->model('pegawai_m');
-        $data['row'] = $this->pegawai_m->get();
+        check_not_login();
+		$this->load->model('user_m');
+        $data['row'] = $this->user_m->get();
 
-		$this->template->load('template', 'pegawai/index', $data);
+		$this->template->load('template', 'pengguna/index', $data);
 	}
 }

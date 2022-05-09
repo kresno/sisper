@@ -20,6 +20,7 @@ class Satuan extends CI_Controller {
 	 */
 	public function index()
 	{
+		check_not_login();
         $this->load->model('satuan_m');
         $data['row'] = $this->satuan_m->get();
 

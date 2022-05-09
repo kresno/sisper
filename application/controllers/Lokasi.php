@@ -20,6 +20,7 @@ class Lokasi extends CI_Controller {
 	 */
 	public function index()
 	{
+		check_not_login();
 		$this->load->model('lokasi_m');
         $data['row'] = $this->lokasi_m->get();
 

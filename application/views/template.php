@@ -47,7 +47,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="<?=site_url('auth/logout')?>" class="dropdown-item">
             <i class="fas fa-right-from-bracket mr-2"></i> Logout
           </a>
         </div>
@@ -71,7 +71,7 @@
           <img src="<?=base_url()?>assets/logo.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nama Akun</a>
+          <a href="#" class="d-block"><?php echo $this->fungsi->user_login()->nama; ?></a>
         </div>
       </div>
 
@@ -105,7 +105,7 @@
             </a>
           </li>
 
-          <li class="nav-header">PENGATURAN</li>
+          <li class="nav-header">Pengaturan Data Master</li>
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
@@ -139,18 +139,20 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=site_url('pengguna')?>" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Pengguna
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="<?=site_url('pegawai')?>" class="nav-link">
               <i class="nav-icon far fa-address-card"></i>
               <p>
                 Pegawai
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-header">Pengaturan Data Sistem</li>
+          <li class="nav-item">
+            <a href="<?=site_url('pengguna')?>" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pengguna
               </p>
             </a>
           </li> 
