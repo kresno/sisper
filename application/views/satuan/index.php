@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="float-right">
-                  <a href="<?=site_url('user/add')?>" class="btn btn-primary btn-flat">
+                  <a href="<?=site_url('satuan/create')?>" class="btn btn-primary btn-flat">
                     <i class="fa fa-plus"></i>Tambah
                   </a>
                 </div>

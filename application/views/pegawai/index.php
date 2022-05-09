@@ -15,6 +15,13 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
+              <div class="card-header">
+                <div class="float-right">
+                  <a href="<?=site_url('pegawai/create')?>" class="btn btn-primary btn-flat">
+                    <i class="fa fa-plus"></i>Tambah
+                  </a>
+                </div>
+              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -35,12 +42,16 @@
                         <td><?=$data->nip?></td>
                         <td><?=$data->jabatan?></td>
                         <td>
-                            <a href="<?=site_url('lokasi/create')?>" class="btn btn-warning btn-xs">
+                            <a href="<?=site_url('pegawai/edit/'.$data->id)?>" class="btn btn-warning btn-xs">
                                 <i class="fa fa-edit"></i>Edit
                             </a>
-                            <a href="<?=site_url('lokasi/create')?>" class="btn btn-danger btn-xs">
-                                <i class="fa fa-trash"></i>Hapus
-                            </a>
+                            <form action="<?=site_url('pegawai/delete/')?>" method="post">
+                              <input type="hidden" name="id" value="<?=$data->id?>">
+                              <button onclick="return confirm('Apakah Anda Yakin?')" class="btn btn-danger btn-xs">
+                                  <i class="fa fa-trash"></i>Hapus
+                              </button>
+                            </form>
+                            
                         </td>
                     </tr>
                     <?php } ?>
