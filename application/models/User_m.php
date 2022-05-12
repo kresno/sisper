@@ -22,4 +22,15 @@ Class User_m extends CI_Model {
         return $query;
     }
 
+    public function cetak($id = null)
+    {
+        $this->db->from('user');
+        if($id!=null)
+        {
+            $this->db->where('id', $id);
+        }
+        $query = $this->db->get();
+        return $query->row();
+    }
+
 }
