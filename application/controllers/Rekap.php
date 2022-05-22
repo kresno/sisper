@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class RincianBelanja extends CI_Controller {
+class Rekap extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,12 +18,36 @@ class RincianBelanja extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+    function __construct()
+	{
+		parent::__construct();
+		
+		check_not_login();
+
+		$this->load->model('laporan_m');
+	}
+
 	public function index()
 	{
-		check_not_login();
-		$this->load->model('rincianbelanja_m');
-        $data['row'] = $this->rincianbelanja_m->get();
+        $data = '';
 
-		$this->template->load('template', 'rincianbelanja/index', $data);
+        $this->template->load('template', 'rekap/bulanan', $data);
 	}
+
+    public function all()
+    {
+        $data = '';
+
+        $this->template->load('template', 'rekap/tahunan', $data);
+    }
+
+    public function cetak_bulanan()
+    {
+        $this->load->view('laporan/cetak', $data, FALSE);
+    }
+
+    public function cetak_tahunan()
+    {
+        $this->load->view('laporan/cetak', $data, FALSE);
+    }
 }

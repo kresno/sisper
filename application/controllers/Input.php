@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class RincianBelanja extends CI_Controller {
+class Input extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,10 +20,9 @@ class RincianBelanja extends CI_Controller {
 	 */
 	public function index()
 	{
+        $data = '';
 		check_not_login();
-		$this->load->model('rincianbelanja_m');
-        $data['row'] = $this->rincianbelanja_m->get();
 
-		$this->template->load('template', 'rincianbelanja/index', $data);
+		$this->template->load('template', 'input/index', $data);
 	}
 }

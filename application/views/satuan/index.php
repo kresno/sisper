@@ -38,12 +38,15 @@
                         <td><?=$no++?></td>
                         <td><?=$data->nama?></td>
                         <td>
-                            <a href="<?=site_url('lokasi/create')?>" class="btn btn-warning btn-xs">
+                            <a href="<?=site_url('satuan/edit/'.$data->id)?>" class="btn btn-warning btn-xs">
                                 <i class="fa fa-edit"></i>Edit
                             </a>
-                            <a href="<?=site_url('lokasi/create')?>" class="btn btn-danger btn-xs">
-                                <i class="fa fa-trash"></i>Hapus
-                            </a>
+                            <form action="<?=site_url('satuan/delete/')?>" method="post">
+                              <input type="hidden" name="id" value="<?=$data->id?>">
+                              <button onclick="return confirm('Apakah Anda Yakin?')" class="btn btn-danger btn-xs">
+                                  <i class="fa fa-trash"></i>Hapus
+                              </button>
+                            </form>
                         </td>
                     </tr>
                     <?php } ?>

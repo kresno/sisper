@@ -26,4 +26,16 @@ class Lokasi extends CI_Controller {
 
 		$this->template->load('template', 'lokasi/index', $data);
 	}
+
+	public function delete()
+	{
+		$id = $this->input->post('id');
+		$this->lokasi_m->delete($id);
+
+		if($this->db->affected_rows()>0)
+			{
+				echo "<script>alert('Data Berhasil Dihapus');</script>";
+			}
+			echo "<script>window.location='".site_url('pegawai')."';</script>";
+	}
 }

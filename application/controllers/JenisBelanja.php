@@ -18,8 +18,19 @@ class JenisBelanja extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		
+		check_not_login();
+
+		$this->load->model('jenisbelanja_m');
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
-		$this->template->load('template', 'jenisbelanja/index');
+		$data['row'] = $this->jenisbelanja_m->get();
+		$this->template->load('template', 'jenisbelanja/index', $data);
 	}
 }

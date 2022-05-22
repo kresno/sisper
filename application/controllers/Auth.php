@@ -45,7 +45,7 @@ class Auth extends CI_Controller {
 				echo "<script>
 					alert('Selamat, Berhasil Login');
 					window.location='".site_url('dashboard')."';
-				</script>";
+					</script>";
             } else {
                 echo "<script>
 					alert('Login Gagal, Silahkan dicek kembali username dan passwordnya');

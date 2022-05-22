@@ -12,4 +12,16 @@ Class Satuan_m extends CI_Model {
         return $query;
     }
 
+    public function add($post)
+    {
+        $params['nama'] = $post['nama'];
+
+        $this->db->insert('satuan', $params);
+    }
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('pegawai');
+    }
 }

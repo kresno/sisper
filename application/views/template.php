@@ -81,7 +81,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link">
+            <a href="<?=site_url() ?>" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -89,25 +89,55 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Input Bulanan
+                Transaksi
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url('transaksi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penambahan Barang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url('progress') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Progress Persediaan</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a href="<?=site_url('laporan') ?>" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Laporan
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url('rekap') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rekap Bulanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url('rekap/all') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rekap Tahunan</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-header">Pengaturan Data Master</li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?=site_url('jenisbelanja') ?>" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Jenis Belanja
@@ -115,7 +145,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
+            <a href="<?=site_url('rincianbelanja')?>" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Rincian Belanja

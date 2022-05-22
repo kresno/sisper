@@ -18,12 +18,51 @@ class Satuan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		
+		check_not_login();
+
+		$this->load->model('satuan_m');
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
-		check_not_login();
-        $this->load->model('satuan_m');
         $data['row'] = $this->satuan_m->get();
 
 		$this->template->load('template', 'satuan/index', $data);
+	}
+
+	public function create()
+	{
+		$this->form_validation->set_rules('nama', 'nama', 'required');
+		
+		$this->form_validation->set_error_delimiters('<span class="hep-block">', '</span>');
+
+		if($this->form_validation->run() == FALSE){
+			$this->template->load('template', 'satuan/create');
+		} else {
+			$post = $this->input->post(null, TRUE);
+			$this->satuan_m->add($post);
+			if($this->db->affected_rows()>0)
+			{
+				echo "<script>alert('Data Berhasil Disimpan');</script>";
+			}
+			echo "<script>window.location='".site_url('satuan')."';</script>";
+		}
+	}
+
+	public function delete()
+	{
+		$id = $this->input->post('id');
+		$this->satuan_m->delete($id);
+
+		if($this->db->affected_rows()>0)
+			{
+				echo "<script>alert('Data Berhasil Dihapus');</script>";
+			}
+			echo "<script>window.location='".site_url('pegawai')."';</script>";
 	}
 }

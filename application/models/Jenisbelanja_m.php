@@ -1,9 +1,9 @@
 <?php
-Class Lokasi_m extends CI_Model {
+Class Jenisbelanja_m extends CI_Model {
 
     public function get($id = null)
     {
-        $this->db->from('lokasi');
+        $this->db->from('jenisbelanja');
         if($id!=null)
         {
             $this->db->where('id', $id);
@@ -16,13 +16,13 @@ Class Lokasi_m extends CI_Model {
     {
         $params['nama'] = $post['nama'];
 
-        $this->db->insert('lokasi', $params);
+        $this->db->insert('jenisbelanja', $params);
     }
 
     public function delete($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('lokasi');
+        $this->db->delete('jenisbelanja');
     }
 
 }
